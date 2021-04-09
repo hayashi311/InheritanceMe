@@ -1,7 +1,8 @@
 import Foundation
 
 @objc public protocol RunableProtocolBasedNSObjct: NSObjectProtocol {
-    @objc optional func run()
+    @objc optional func run1()
+    @objc func run2()
 }
 
 public protocol RunableProtocol {
@@ -9,7 +10,9 @@ public protocol RunableProtocol {
 }
 
 open class InheritanceMe1: NSObject, RunableProtocolBasedNSObjct {
-
+    open func run2() {
+        print("InheritanceMe2 run2")
+    }
 }
 
 open class InheritanceMe2: NSObject, RunableProtocol {
